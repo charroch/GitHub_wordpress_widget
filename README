@@ -2,4 +2,7 @@ Minimalist github widget for wordpress with configuration of the github's user a
 
 You can check how it looks on http://novoda.com
 
+Installation:
+Just put it in your <wordpress>/wp-content/plugins directory. Tested with WP 2.9.1. You need curl, json and its corresponding php hooks to make it work.
+
 License is WTFPL - Do What The Fuck You Want To Public License
