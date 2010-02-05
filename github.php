@@ -12,6 +12,7 @@ register_activation_hook( __FILE__, array('GitHub', 'activate'));
 register_deactivation_hook( __FILE__, array('GitHub', 'deactivate'));
 class GitHub {
     function activate(){
+        $curl_handle=curl_init();
         $username = 'novoda';
         $title = 'Our Projects';
         if ( ! get_option('github_user')){
@@ -46,7 +47,6 @@ class GitHub {
         }
     }
     function widget($args){
-        $curl_handle=curl_init();
         curl_setopt($curl_handle,CURLOPT_URL,'http://github.com/api/v2/json/repos/show/' . get_option('github_user'));
         curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
         curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
@@ -73,4 +73,3 @@ class GitHub {
     }
 }
 ?>
-
